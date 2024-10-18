@@ -1,5 +1,5 @@
 ### 200 {phone}
-PATCH http://localhost:5000/api/phones/6
+PATCH http://localhost:5000/api/phones/7
 Content-Type:application/json 
 
 {
@@ -15,6 +15,14 @@ Content-Type:application/json
 }
 
 ### 500 {model valid error}
+PATCH http://localhost:5000/api/phones/6
+Content-Type:application/json 
+
+{
+    "model": "G"
+}
+
+### 422 {validate error}
 PATCH http://localhost:5000/api/phones/6
 Content-Type:application/json 
 

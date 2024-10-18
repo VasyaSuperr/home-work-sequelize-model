@@ -1,17 +1,18 @@
 const { Router } = require('express');
 const { phonesController } = require('../controllers');
+const { validate } = require('../middleware');
 
 const phonesRouter = Router();
 
 phonesRouter
   .route('/')
-  .post(phonesController.createPhone)
+  .post(validate.validationOnCreate, phonesController.createPhone)
   .get(phonesController.getPhones);
 
 phonesRouter
   .route('/:phoneId')
   .get(phonesController.getPhoneById)
-  .patch(phonesController.updatePhoneById)
+  .patch(validate.validationOnUpdate, phonesController.updatePhoneById)
   .delete(phonesController.deletePhoneById);
 
 module.exports = phonesRouter;

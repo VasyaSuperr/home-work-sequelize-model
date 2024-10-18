@@ -1,7 +1,6 @@
 const _ = require('lodash');
 const { Phone } = require('./../models');
 const createHttpError = require('http-errors');
-const { where } = require('sequelize');
 
 module.exports.createPhone = async (req, res, next) => {
   const { body } = req;

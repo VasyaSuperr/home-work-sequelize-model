@@ -3,12 +3,25 @@ POST http://localhost:5000/api/phones
 Content-Type: application/json
 
 {
-  "model": "Galaxy S21",
+  "model": "Galaxy S31",
   "brand": "Samsung",
   "yearOfManufacture": "2021-01-14",
   "ramSize": 8,
   "processor": "Exynos 2100",
-  "screenSize": 6.2,
+  "screenSize": 6.2
+}
+
+### 422 {validate error}
+POST http://localhost:5000/api/phones
+Content-Type: application/json
+
+{
+  "model": "G",
+  "brand": "Samsung",
+  "yearOfManufacture": "2021-01-14",
+  "ramSize": 8,
+  "processor": "Exynos 2100",
+  "screenSize": 6.2
 }
 
 
