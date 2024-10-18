@@ -1,13 +1,13 @@
 const { Router } = require('express');
 const { phonesController } = require('../controllers');
-const { validate } = require('../middleware');
+const { validate, paginate } = require('../middleware');
 
 const phonesRouter = Router();
 
 phonesRouter
   .route('/')
   .post(validate.validationOnCreate, phonesController.createPhone)
-  .get(phonesController.getPhones);
+  .get(paginate.paginatePhones, phonesController.getPhones);
 
 phonesRouter
   .route('/:phoneId')

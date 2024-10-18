@@ -1,2 +1,5 @@
 ### 200 {phone}
 GET http://localhost:5000/api/phones?page=2&results=2
+
+### 200 {phone}
+GET http://localhost:5000/api/phones?page=-3&results=-2

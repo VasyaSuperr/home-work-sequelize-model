@@ -20,10 +20,7 @@ module.exports.createPhone = async (req, res, next) => {
 };
 
 module.exports.getPhones = async (req, res, next) => {
-  const { page, results } = req.query;
-
-  const limit = results;
-  const offset = results * (page - 1);
+  const { limit, offset } = req.pagination;
 
   try {
     const foundPhones = await Phone.findAll({
