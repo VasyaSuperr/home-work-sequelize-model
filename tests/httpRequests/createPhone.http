@@ -1,0 +1,15 @@
+### 201 {phone}
+POST http://localhost:5000/api/phones
+Content-Type: application/json
+
+{
+  "model": "Galaxy S21",
+  "brand": "Samsung",
+  "yearOfManufacture": "2021-01-14",
+  "ramSize": 8,
+  "processor": "Exynos 2100",
+  "screenSize": 6.2,
+}
+
+
+
