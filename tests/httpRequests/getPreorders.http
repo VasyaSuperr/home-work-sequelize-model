@@ -1,2 +1,11 @@
 ### 200 [preorders]
 GET http://localhost:5000/api/preorders
+
+### 200 [preorders?status=confirmed]
+GET http://localhost:5000/api/preorders?status=confirmed
+
+### 200 [preorders?status=done]
+GET http://localhost:5000/api/preorders?status=done
+
+### 200 [preorders?status=pending]
+GET http://localhost:5000/api/preorders?status=pending
