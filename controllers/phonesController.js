@@ -1,7 +1,6 @@
 const _ = require('lodash');
 const { Phone } = require('./../models');
 const createHttpError = require('http-errors');
-const { date } = require('yup');
 
 module.exports.createPhone = async (req, res, next) => {
   const { body } = req;
@@ -116,6 +115,30 @@ module.exports.getPhonesPreorders = async (req, res, next) => {
     });
 
     res.status(200).send({ data: foundPreorders });
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports.createPhonesPreorders = async (req, res, next) => {
+  const { body } = req;
+  const { phoneId } = req.params;
+
+  try {
+    const foundPhone = await Phone.findByPk(phoneId);
+
+    if (!foundPhone) {
+      return next(createHttpError(404, 'Phone Not Found'));
+    }
+
+    const newPreorder = await foundPhone.createPreorder(body);
+
+    const preparedPreorders = _.omit(newPreorder.get(), [
+      'updatedAt',
+      'createdAt',
+    ]);
+
+    res.status(201).json({ data: preparedPreorders });
   } catch (error) {
     next(error);
   }

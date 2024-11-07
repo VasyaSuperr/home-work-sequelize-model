@@ -1,0 +1,21 @@
+# 201 [preorder]
+POST http://localhost:5000/api/phones/1/preorders
+Content-Type: application/json
+
+{
+  "orderDate": "2024-11-05",
+  "status": "pending",
+  "phoneQuantity": 2,
+  "customerPhoneNumber": "+380501234567"
+}
+
+### 404 [User Not Found]
+POST http://localhost:5000/api/phones/0/preorders
+Content-Type: application/json
+
+{
+  "orderDate": "2024-11-05",
+  "status": "pending",
+  "phoneQuantity": 2,
+  "customerPhoneNumber": "+380501234567"
+}

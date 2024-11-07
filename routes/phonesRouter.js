@@ -17,6 +17,7 @@ phonesRouter
 
 phonesRouter
   .route('/:phoneId/preorders')
-  .get(phonesController.getPhonesPreorders);
+  .get(phonesController.getPhonesPreorders)
+  .post(phonesController.createPhonesPreorders);
 
 module.exports = phonesRouter;
